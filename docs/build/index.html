@@ -1,0 +1,1394 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference - MinusOneDB</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#access-amp-user-management" class="toc-h1 toc-link" data-title="Access &amp; User Management">Access &amp; User Management</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#authorisation" class="toc-h2 toc-link" data-title="Access &amp; User Management">Authorisation</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-new-user" class="toc-h2 toc-link" data-title="Access &amp; User Management">Create a New User</a>
+                  </li>
+                  <li>
+                    <a href="#change-password-of-a-user" class="toc-h2 toc-link" data-title="Access &amp; User Management">Change password of a user</a>
+                  </li>
+                  <li>
+                    <a href="#update-rights-of-a-user" class="toc-h2 toc-link" data-title="Access &amp; User Management">Update rights of a user</a>
+                  </li>
+                  <li>
+                    <a href="#list-all-users" class="toc-h2 toc-link" data-title="Access &amp; User Management">List all Users</a>
+                  </li>
+                  <li>
+                    <a href="#get-details-about-a-specific-user" class="toc-h2 toc-link" data-title="Access &amp; User Management">Get details about a specific user</a>
+                  </li>
+                  <li>
+                    <a href="#remove-a-user" class="toc-h2 toc-link" data-title="Access &amp; User Management">Remove a user</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#data-lake-methods" class="toc-h1 toc-link" data-title="Data Lake Methods">Data Lake Methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#retrieve-the-current-schema" class="toc-h2 toc-link" data-title="Data Lake Methods">Retrieve the current schema</a>
+                  </li>
+                  <li>
+                    <a href="#add-a-schema" class="toc-h2 toc-link" data-title="Data Lake Methods">Add a schema</a>
+                  </li>
+                  <li>
+                    <a href="#wipe-all-schema" class="toc-h2 toc-link" data-title="Data Lake Methods">Wipe all schema</a>
+                  </li>
+                  <li>
+                    <a href="#publish-the-data" class="toc-h2 toc-link" data-title="Data Lake Methods">Publish the data</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-data" class="toc-h2 toc-link" data-title="Data Lake Methods">Retrieve a data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#archive-data-layer-methods" class="toc-h1 toc-link" data-title="Archive Data Layer Methods">Archive Data Layer Methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#write-method" class="toc-h2 toc-link" data-title="Archive Data Layer Methods">Write Method</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#data-store-methods" class="toc-h1 toc-link" data-title="Data Store Methods">Data Store Methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#query-from-the-database" class="toc-h2 toc-link" data-title="Data Store Methods">Query from the database</a>
+                  </li>
+                  <li>
+                    <a href="#store-list" class="toc-h2 toc-link" data-title="Data Store Methods">Store List</a>
+                  </li>
+                  <li>
+                    <a href="#store-enable-disable" class="toc-h2 toc-link" data-title="Data Store Methods">Store Enable / Disable</a>
+                  </li>
+                  <li>
+                    <a href="#store-autocommit" class="toc-h2 toc-link" data-title="Data Store Methods">Store AutoCommit</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#session-store-methods" class="toc-h1 toc-link" data-title="Session Store Methods">Session Store Methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#session-apply" class="toc-h2 toc-link" data-title="Session Store Methods">Session Apply</a>
+                  </li>
+                  <li>
+                    <a href="#session-search" class="toc-h2 toc-link" data-title="Session Store Methods">Session Search</a>
+                  </li>
+                  <li>
+                    <a href="#session-list" class="toc-h2 toc-link" data-title="Session Store Methods">Session List</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#system-configurations" class="toc-h1 toc-link" data-title="System Configurations">System Configurations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#retrieve-all-system-configurations" class="toc-h2 toc-link" data-title="System Configurations">Retrieve all system configurations</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-a-specific-system-properties" class="toc-h2 toc-link" data-title="System Configurations">Retrieve a specific system properties</a>
+                  </li>
+                  <li>
+                    <a href="#set-a-system-property" class="toc-h2 toc-link" data-title="System Configurations">Set a System property</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#operations" class="toc-h1 toc-link" data-title="Operations">Operations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#healthchecks" class="toc-h2 toc-link" data-title="Operations">HealthChecks</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#annexures" class="toc-h1 toc-link" data-title="Annexures">Annexures</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#annexure-a-rights-to-the-users" class="toc-h2 toc-link" data-title="Annexures">Annexure A - Rights to the Users</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to minusone.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To create the auth token:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/auth'</span> <span class="se">\</span>
+--form <span class="s1">'username="yourUserName"'</span> <span class="se">\</span>
+--form <span class="s1">'password="yourPassword"'</span>
+</code></pre>
+<p>All the API calls to our services are authenticated with a token that is passed in the headers. The token can be generated using the <code>/auth</code> API as stated on the right.</p>
+
+<p>The command on the right would generate an auth token and it will return a HTTP response <code>200</code> with a token content as below:<br>
+<code>ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4=</code></p>
+
+<blockquote>
+<p>To send the auth token in all the other API calls</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request GET <span class="s1">'https://events-sage.minusonedb.com/health'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span>
+</code></pre>
+<p>This token can be used to pass in the headers for authorisation purposes of all the other APIs as shown on the right.</p>
+
+<p>Please note that except <code>/auth</code> API, all the other APIs work with the auth token sent in the headers, failure to which a 401 HTTP status code will be returned.</p>
+<h1 id='access-amp-user-management'>Access &amp; User Management</h1><h2 id='authorisation'>Authorisation</h2><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/auth'</span> <span class="se">\</span>
+--form <span class="s1">'username="yourUserName"'</span> <span class="se">\</span>
+--form <span class="s1">'password="yourPassword"'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a generated token in plain text like this:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4<span class="o">=</span>
+</code></pre>
+<p>This endpoint generates a token and returns that for all your future purposes.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/auth</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username that has been created by you.</td>
+</tr>
+<tr>
+<td>password</td>
+<td>The password of the username.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+A generated token that can be used in all the subsequent API calls.
+</aside>
+<h2 id='create-a-new-user'>Create a New User</h2><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/user/add'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'username="NewUserName"'</span> <span class="se">\</span>
+--form <span class="s1">'password="PasswordForTheNewUSer"'</span> <span class="se">\</span>
+--form <span class="s1">'rights="schema"'</span>
+</code></pre>
+<p>This endpoint creates a new user and returns a HTTP Code, <code>204</code> if the user was created successfully.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/user/add</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The new username to be created</td>
+</tr>
+<tr>
+<td>password</td>
+<td>Password for the new user</td>
+</tr>
+<tr>
+<td>rights</td>
+<td>The rights assigned to the user. You can pass multiple rights with comma separated.<br>Please refer to Annexure A for the details on different types of rights.</td>
+</tr>
+</tbody></table>
+<h2 id='change-password-of-a-user'>Change password of a user</h2><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/user/password'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'username="OldUserName"'</span> <span class="se">\</span>
+--form <span class="s1">'password="YourNewPassword"'</span>
+</code></pre>
+<p>This endpoint creates a new user and returns a HTTP Code, <code>204</code> if the user&#39;s password was changed successfully.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/user/password</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The new username to be created</td>
+</tr>
+<tr>
+<td>password</td>
+<td>Password for the new user</td>
+</tr>
+</tbody></table>
+<h2 id='update-rights-of-a-user'>Update rights of a user</h2><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/user/update'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'username="m1william"'</span> <span class="se">\</span>
+--form <span class="s1">'rights="admin"'</span>
+</code></pre>
+<p>This endpoint creates a new user and returns a HTTP Code, <code>204</code> if the user&#39;s rights were updated.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/user/update</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The new username to be created</td>
+</tr>
+<tr>
+<td>rights</td>
+<td>The rights assigned to the user. You can pass multiple rights with comma separated.<br>Please refer to Annexure A for the details on different types of rights.</td>
+</tr>
+</tbody></table>
+<h2 id='list-all-users'>List all Users</h2><pre class="highlight shell tab-shell"><code>curl --location --request GET <span class="s1">'https://events-sage.minusonedb.com/user/list'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span>
+</code></pre>
+<blockquote>
+<p>The above command will return a HTTP code <code>200</code> with below contents:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">"username"</span>: <span class="s2">"chandra"</span>,
+        <span class="s2">"rights"</span>: <span class="o">[</span>
+            <span class="s2">"admin"</span>,
+            <span class="s2">"schema"</span>,
+            <span class="s2">"get"</span>,
+            <span class="s2">"publish"</span>,
+            <span class="s2">"sessionUpdate"</span>,
+            <span class="s2">"sessionQuery"</span>
+        <span class="o">]</span>
+    <span class="o">}</span>,
+    <span class="o">{</span>
+        <span class="s2">"username"</span>: <span class="s2">"service_dev_smp_session"</span>,
+        <span class="s2">"rights"</span>: <span class="o">[</span>
+            <span class="s2">"sessionUpdate"</span>
+        <span class="o">]</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre>
+<p>This endpoint creates a new user and returns a HTTP Code, <code>200</code> with all the users list in the JSON response will be returned as shown on the right.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET &#39;https://events-sage.minusonedb.com/user/list</code></p>
+<h2 id='get-details-about-a-specific-user'>Get details about a specific user</h2>
+<blockquote>
+<p>To get details about a specific user:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request GET <span class="s1">'https://events-sage.minusonedb.com/user/get'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'username="william"'</span>
+</code></pre>
+<blockquote>
+<p>Successful API call will return the response as below:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="k">*</span>.<span class="k">*</span>
+</code></pre>
+<p>This endpoint can be used to retrieve details about a specific user.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET &#39;https://events-sage.minusonedb.com/user/get</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username whose details are needed</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed'>Rights Needed</h3>
+<p><code>admin</code></p>
+<h3 id='api-response'>API Response</h3>
+<p>A successful API Call will return a HTTP status code <code>200</code> with a JSON response as shown on the right.</p>
+<h2 id='remove-a-user'>Remove a user</h2>
+<blockquote>
+<p>To remove a user:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/user/remove'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'username="william"'</span>
+</code></pre>
+<p>This endpoint can be used to delete a user and its rights from the system</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/user/remove</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The username whose details are needed</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed-2'>Rights Needed</h3>
+<p><code>admin</code></p>
+<h3 id='api-response-2'>API Response</h3>
+<p>A successful API call will return a HTTP Status code <code>204</code>.</p>
+<h1 id='data-lake-methods'>Data Lake Methods</h1><h2 id='retrieve-the-current-schema'>Retrieve the current schema</h2>
+<blockquote>
+<p>To retrieve the current scheam,</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request GET <span class="s1">'https://events-sage.minusonedb.com/schema'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span>
+</code></pre>
+<blockquote>
+<p>The successful query will return the schema as below:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+    <span class="s2">"browser.screen.pixelDepth"</span>: <span class="o">{</span>
+        <span class="s2">"large"</span>: <span class="nb">false</span>,
+        <span class="s2">"multivalued"</span>: <span class="nb">false</span>,
+        <span class="s2">"name"</span>: <span class="s2">"browser.screen.pixelDepth"</span>,
+        <span class="s2">"type"</span>: <span class="s2">"integer"</span>,
+        <span class="s2">"required"</span>: <span class="nb">false</span>
+    <span class="o">}</span>,
+    <span class="s2">"_m1key"</span>: <span class="o">{</span>
+        <span class="s2">"large"</span>: <span class="nb">false</span>,
+        <span class="s2">"multivalued"</span>: <span class="nb">false</span>,
+        <span class="s2">"name"</span>: <span class="s2">"_m1key"</span>,
+        <span class="s2">"type"</span>: <span class="s2">"integer"</span>,
+        <span class="s2">"required"</span>: <span class="nb">true</span>
+    <span class="o">}</span>,
+    <span class="s2">"_m1rand"</span>: <span class="o">{</span>
+        <span class="s2">"large"</span>: <span class="nb">false</span>,
+        <span class="s2">"multivalued"</span>: <span class="nb">false</span>,
+        <span class="s2">"name"</span>: <span class="s2">"_m1rand"</span>,
+        <span class="s2">"type"</span>: <span class="s2">"double"</span>,
+        <span class="s2">"required"</span>: <span class="nb">true</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<p>This endpoint will retrieve the currently loaded schema in your database. as shown on the right.
+By default, the 2 columns, <code>_m1key</code> and <code>_m1rand</code> are always present in your database.<br><br>Any other columns added from the schema add endpoint will also appear in this list.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET &#39;https://events-sage.minusonedb.com/schema</code></p>
+<h3 id='rights-needed-3'>Rights Needed</h3>
+<p><code>schema, get, publish</code></p>
+<h2 id='add-a-schema'>Add a schema</h2>
+<blockquote>
+<p>To add columns to the schema</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/schema/add'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'properties="[
+  {
+       \"name\": \"form.action\",
+       \"type\": \"string\"
+  }]"'</span>
+</code></pre>
+<blockquote>
+<p>A typical JSON passed in the parameter <code>properties</code>:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"form.action"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"form.method"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint will add properties to the data lake. You can call this endpoint as many times to add any new properties of your desire to the data lake.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/schema/add</code></p>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>properties</td>
+<td>A JSON string with structure mentioned on the right.</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed-4'>Rights Needed</h3>
+<p><code>schema</code></p>
+<h2 id='wipe-all-schema'>Wipe all schema</h2>
+<blockquote>
+<p>To wipe and delete all the properties from the schema:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/schema/wipe'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span>
+</code></pre>
+<p>This endpoint can be used to wipe out and remove all the properties from the schema. Please note that the wipe fucntion will not remove the 2 default schema properties, <code>_m1key</code> and <code>_m1rand</code>.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/schema/wipe</code></p>
+<h3 id='rights-needed-5'>Rights Needed</h3>
+<p><code>schema</code></p>
+<h2 id='publish-the-data'>Publish the data</h2>
+<blockquote>
+<p>To publish data from S3 archive files:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/publish'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'s3file="s3://filePath"'</span> <span class="se">\</span>
+--form <span class="s1">'format ="json"'</span>
+</code></pre>
+<p>This endpoint can be used to publish all data from S3 into the data lake with optional transformation</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>POST https://events-sage.minusonedb.com/schema/publish</code></p>
+<h3 id='url-parameters-7'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>s3file</td>
+<td>A fully qualified S3 file path</td>
+</tr>
+<tr>
+<td>rules</td>
+<td>Transformation rules, if any</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Format of the file in S3, could be one of txt, csv, json, jsonl<br>If not present, file format would be used.</td>
+</tr>
+<tr>
+<td>compression</td>
+<td>could be one of gz, zip.<br>If not present, filename will be inspected.</td>
+</tr>
+<tr>
+<td>encoding</td>
+<td>Any java supported file encoding. Default is <code>utf-8</code></td>
+</tr>
+<tr>
+<td>delimiter</td>
+<td>Delimiter used in the file<br>Tabs or Comma would be assumed for txt and csv files</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>Specifies whether headers are present for delimited file formats. If not a TransformRuleSet will be required. Default true.</td>
+</tr>
+<tr>
+<td>files</td>
+<td>Used (only) to specify specific files to be extracted from zip archives.</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed-6'>Rights Needed</h3>
+<p><code>publish</code></p>
+<h3 id='api-response-3'>API Response</h3>
+<p>A successful API call will return a HTTP code <code>204</code>.</p>
+<h2 id='retrieve-a-data'>Retrieve a data</h2>
+<blockquote>
+<p>To retrieve a specific data:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/get'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'ids="0"'</span>
+</code></pre>
+<blockquote>
+<p>A successful API response would be as below:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">"_m1.ip"</span>: <span class="s2">"1.1.1.1"</span>,
+        <span class="s2">"_m1key"</span>: 0,
+        <span class="s2">"event.element"</span>: <span class="s2">"World"</span>,
+        <span class="s2">"_m1.receivedUTC"</span>: <span class="s2">"2021-02-23T19:18:04.399Z"</span>,
+        <span class="s2">"_m1rand"</span>: 0.3628966850910368,
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre>
+<p>This endpoint can be used to query the data from the Data Lake directly using the <code>_m1key</code>.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/get</code></p>
+<h3 id='url-parameters-8'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ids</td>
+<td>List of IDS to be retrieved.</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed-7'>Rights Needed</h3>
+<p><code>get</code></p>
+<h3 id='api-response-4'>API Response</h3>
+<p>A successful API call will return a HTTP code <code>200</code> with a JSON body with contents as shown on the right.</p>
+<h1 id='archive-data-layer-methods'>Archive Data Layer Methods</h1><h2 id='write-method'>Write Method</h2>
+<blockquote>
+<p>To publish a data into the archive:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/write'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'publish="true"'</span> <span class="se">\</span>
+--form <span class="s1">'items="[{\"seer_event\":\"click\"}]"'</span>
+</code></pre>
+<p>This endpoint is used to persist any arbitrary data into the persistent archive layer.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/write</code></p>
+<h3 id='url-parameters-9'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>items</td>
+<td>None</td>
+<td>A JSON string as an array items to be published.<br> A typical JSON array items is shown as an example on the right.</td>
+</tr>
+<tr>
+<td>publish</td>
+<td>false</td>
+<td>Flag to tell if the data should be immediately published from the archieve layer to data store.</td>
+</tr>
+<tr>
+<td>async</td>
+<td>true</td>
+<td>A flag to tell items should be published asynchronously.</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed-8'>Rights Needed</h3>
+<p><code>publish</code></p>
+<h3 id='api-response-5'>API Response</h3>
+<p>If <code>async</code> is set as <code>false</code>, then a value is returned which denotes the <code>_m1key</code> for that record along with a HTTP status code <code>200</code>. In other cases, a HTTP status code <code>204</code> is returned.</p>
+<h1 id='data-store-methods'>Data Store Methods</h1><h2 id='query-from-the-database'>Query from the database</h2>
+<blockquote>
+<p>To query from the database:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/query'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'store="index"'</span> <span class="se">\</span>
+--form <span class="s1">'q="time.utc.month:3"'</span> <span class="se">\</span>
+--form <span class="s1">'rows="1"'</span> <span class="se">\</span>
+--form <span class="s1">'fl="time.utc.month"'</span> <span class="se">\</span>
+--form <span class="s1">'sort="_m1key asc"'</span> <span class="se">\</span>
+--form <span class="s1">'json="{
+  \"facet\": {
+    \"eventsByUser\": {
+      \"field\": \"seer_event\",
+      \"type\": \"terms\",
+      \"limit\": -1
+    }
+  }
+}"'</span>
+</code></pre>
+<blockquote>
+<p>Successsful API Response</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+    <span class="s2">"response"</span>: <span class="o">{</span>
+        <span class="s2">"docs"</span>: <span class="o">[</span>
+            <span class="o">{</span>
+                <span class="s2">"_m1key"</span>: 1680000,
+                <span class="s2">"time.utc.month"</span>: 3
+            <span class="o">}</span>
+        <span class="o">]</span>,
+        <span class="s2">"numFound"</span>: 735,
+        <span class="s2">"start"</span>: 0
+    <span class="o">}</span>,
+    <span class="s2">"responseHeader"</span>: <span class="o">{</span>
+        <span class="s2">"params"</span>: <span class="o">{</span>
+            <span class="s2">"q"</span>: <span class="s2">"time.utc.month:3"</span>,
+            <span class="s2">"fl"</span>: <span class="s2">"time.utc.month,_m1key"</span>,
+            <span class="s2">"sort"</span>: <span class="s2">"_m1key asc"</span>,
+            <span class="s2">"rows"</span>: <span class="s2">"1"</span>
+        <span class="o">}</span>,
+        <span class="s2">"status"</span>: 0
+    <span class="o">}</span>,
+    <span class="s2">"facets"</span>: <span class="o">{</span>
+        <span class="s2">"count"</span>: 0
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<p>The database supported SOLR query syntaxes. And hence you can refer to this <a href="https://lucene.apache.org/solr/guide/8_0/searching.html#searching">documentation</a> for more details on running advanced queries.</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/query</code></p>
+<h3 id='url-parameters-10'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>store</td>
+<td>None</td>
+<td>Default store name where the query will run</td>
+</tr>
+<tr>
+<td>q</td>
+<td>None</td>
+<td>SOLR syntax query</td>
+</tr>
+<tr>
+<td>rows</td>
+<td>0</td>
+<td>Total number of row to be returned</td>
+</tr>
+<tr>
+<td>fl</td>
+<td>None</td>
+<td>Properties projection list separated by comma</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>None</td>
+<td>Field and order in which the response has to be sorted</td>
+</tr>
+<tr>
+<td>json</td>
+<td>None</td>
+<td>SOLR Facet JSON for advanced query</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed-9'>Rights Needed</h3>
+<p><code>get</code></p>
+<h3 id='api-response-6'>API Response</h3>
+<p>The API response will be a HTTP status code <code>200</code> with the list of all the matching documents as per the query passed in the parameters.</p>
+<h2 id='store-list'>Store List</h2>
+<blockquote>
+<p>To find the store list:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request GET <span class="s1">'https://events-sage.minusonedb.com/store/list'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span>
+</code></pre>
+<blockquote>
+<p>Successful API response:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">"shards"</span>: 1,
+        <span class="s2">"autocommit"</span>: 2,
+        <span class="s2">"replicas"</span>: 1,
+        <span class="s2">"name"</span>: <span class="s2">"index"</span>,
+        <span class="s2">"active"</span>: <span class="nb">true</span>,
+        <span class="s2">"type"</span>: <span class="s2">"standard"</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre>
+<p>This endpoint is used to get the list of all the stores avaialble.</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>GET &#39;https://events-sage.minusonedb.com/store/list</code></p>
+<h3 id='rights-needed-10'>Rights Needed</h3>
+<p><code>get, admin</code></p>
+<h3 id='api-response-7'>API Response</h3>
+<p>A successful command will return HTTP status code <code>200</code> with a JSON body with the list and details of the store list as shown on the right.</p>
+<h2 id='store-enable-disable'>Store Enable / Disable</h2>
+<blockquote>
+<p>To disable / enable a store:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/store/enable'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'store="stash"'</span> <span class="se">\</span>
+--form <span class="s1">'active="false"'</span> <span class="se">\</span>
+</code></pre>
+<p>This endpoint can be used to enable / disable a store.</p>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/store/enable</code></p>
+<h3 id='url-parameters-11'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>store</td>
+<td>A JSON string with structure mentioned on the right.</td>
+</tr>
+<tr>
+<td>active</td>
+<td>true / false - to enable / disable respectively</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed-11'>Rights Needed</h3>
+<p><code>admin</code></p>
+<h3 id='api-response-8'>API Response</h3>
+<p>A successful API response would return HTTP code <code>204</code>.</p>
+<h2 id='store-autocommit'>Store AutoCommit</h2>
+<blockquote>
+<p>To enable / disable autocommit for a store:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/store/enable'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'store="stash"'</span> <span class="se">\</span>
+--form <span class="s1">'on="false"'</span> <span class="se">\</span>
+</code></pre>
+<p>This endpoint can be used to enable / disable autocommit for the store.</p>
+<h3 id='http-request-17'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/store/autocommit</code></p>
+<h3 id='url-parameters-12'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>store</td>
+<td>A JSON string with structure mentioned on the right.</td>
+</tr>
+<tr>
+<td>on</td>
+<td>true / false - to enable / disable respectively</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed-12'>Rights Needed</h3>
+<p><code>admin</code></p>
+<h3 id='api-response-9'>API Response</h3>
+<p>A successful API response would return HTTP code <code>204</code>.</p>
+<h1 id='session-store-methods'>Session Store Methods</h1><h2 id='session-apply'>Session Apply</h2>
+<blockquote>
+<p>To insert / delete items from the session store:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/session/update'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'store="stash"'</span> <span class="se">\</span>
+--form <span class="s1">'ops="[ { \"upsert\": [  {   \"a\" : 1,   \"session\": { \"id\": 2002  }  }  ]  } ]"'</span>
+</code></pre>
+<blockquote>
+<p>A detailed JSON for the parameter ops is as below:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w"> 
+    </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"upsert"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  
+            </span><span class="p">{</span><span class="w">   </span><span class="s2">"a"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">   </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2002</span><span class="w">  </span><span class="p">}</span><span class="w">  </span><span class="p">}</span><span class="w">  
+        </span><span class="p">]</span><span class="w">  
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"delete"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">2001</span><span class="w"> </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-18'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/session/update</code></p>
+<h3 id='url-parameters-13'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>store</td>
+<td>A JSON string with structure mentioned on the right.</td>
+</tr>
+<tr>
+<td>ops</td>
+<td>A JSON array with 2 keys for insertion and deletion. One of them being mandatory.<br>Details are on the right.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+    <ul><li>Please note that `upsert` in the parameter is used to insert an item in the session store.</li>
+    <li>And `delete` in the parameter is used to delete the item from the session store.</li></ul>
+</aside>
+<h3 id='rights-needed-13'>Rights Needed</h3>
+<p><code>sessionUpdate</code></p>
+<h3 id='api-response-10'>API Response</h3>
+<p>A successful API response would return HTTP code <code>204</code>.</p>
+<h2 id='session-search'>Session Search</h2>
+<blockquote>
+<p>To search from the session store:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/session/query'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'store="stash"'</span> <span class="se">\</span>
+--form <span class="s1">'q="*:*"'</span> <span class="se">\</span>
+--form <span class="s1">'sort="session.id asc"'</span>
+</code></pre>
+<blockquote>
+<p>A successful API response will contain matching results:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"a"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"_m1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"geo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"continent_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asia"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"subdivision_2_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"registered_country_geoname_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1269750</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">23.3426</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"continent_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AS"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"subdivision_1_iso_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JH"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"accuracy_radius"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"time_zone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asia/Kolkata"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"network"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49.37.64.0/19"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"geoname_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1258526</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_anonymous_proxy"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"subdivision_2_iso_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"locale_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"city_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ranchi"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"country_iso_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"metro_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"country_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"India"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_in_european_union"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"is_satellite_provider"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23.3426,85.3099"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"834001"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"subdivision_1_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jharkhand"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">85.3099</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"receivedUTC"</span><span class="p">:</span><span class="w"> </span><span class="mi">1618474796186</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="mi">1618474796495</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49.37.82.136"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2002</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The database supported SOLR query syntaxes. And hence you can refer to this <a href="https://lucene.apache.org/solr/guide/8_0/searching.html#searching">documentation</a> for more details on running advanced queries.</p>
+<h3 id='http-request-19'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/query</code></p>
+<h3 id='url-parameters-14'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>store</td>
+<td>None</td>
+<td>Default store name where the query will run</td>
+</tr>
+<tr>
+<td>q</td>
+<td>None</td>
+<td>SOLR syntax query</td>
+</tr>
+<tr>
+<td>rows</td>
+<td>0</td>
+<td>Total number of row to be returned</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>None</td>
+<td>Field and order in which the response has to be sorted</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed-14'>Rights Needed</h3>
+<p><code>sessionSearch</code></p>
+<h3 id='api-response-11'>API Response</h3>
+<p>The API response will be a HTTP status code <code>200</code> with the list of all the matching documents as per the query passed in the parameters.</p>
+<h2 id='session-list'>Session List</h2>
+<blockquote>
+<p>To list all the active sessions:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request GET <span class="s1">'https://events-sage.minusonedb.com/session/list'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span>
+</code></pre>
+<blockquote>
+<p>A successful API response would be:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"shards"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"replicas"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stash"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session.id"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint can be used to list all the active sessions.</p>
+<h3 id='http-request-20'>HTTP Request</h3>
+<p><code>GET &#39;https://events-sage.minusonedb.com/session/list</code></p>
+<h3 id='url-parameters-15'>URL Parameters</h3>
+<p><code>None</code></p>
+<h3 id='rights-needed-15'>Rights Needed</h3>
+<p><code>get, admin</code></p>
+<h3 id='api-response-12'>API Response</h3>
+<p>A successful API call will return HTTP Status Code <code>200</code> with a JSON body as shown on the right.</p>
+<h1 id='system-configurations'>System Configurations</h1><h2 id='retrieve-all-system-configurations'>Retrieve all system configurations</h2>
+<blockquote>
+<p>To retrieve all the system properties:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request GET <span class="s1">'https://events-sage.minusonedb.com/system'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span>
+</code></pre>
+<blockquote>
+<p>A successful API response would be:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"bucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m1-11654edf3e264bd596f62ea916eea541"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"geo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"property-received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"_m1.receivedUTC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"init"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cors"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc.com,efg.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"property-ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"_m1.ip"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"token-expire-ms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"720000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"password-min-length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"us-east-1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"property-session-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"session.id"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint can be used to retrieve all the currently configured system properties.</p>
+<h3 id='http-request-21'>HTTP Request</h3>
+<p><code>GET &#39;https://events-sage.minusonedb.com/system</code></p>
+<h3 id='url-parameters-16'>URL Parameters</h3>
+<p><code>None</code></p>
+<h3 id='rights-needed-16'>Rights Needed</h3>
+<p><code>admin</code></p>
+<h3 id='api-response-13'>API Response</h3>
+<p>A successful API call with a valid system property name could give the details of the system property details as shown on the right.</p>
+<h2 id='retrieve-a-specific-system-properties'>Retrieve a specific system properties</h2>
+<blockquote>
+<p>To retrieve a specific system property, you can pick the property name and run:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request GET <span class="s1">'https://events-sage.minusonedb.com/system/cors'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span>
+</code></pre>
+<blockquote>
+<p>A successful API response would be:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>abc.com,efg.com
+</code></pre>
+<p>This endpoint can be used to retrieve a specific system property</p>
+<h3 id='http-request-22'>HTTP Request</h3>
+<p><code>GET &#39;https://events-sage.minusonedb.com/system/&lt;system_property_name&gt;</code></p>
+<h3 id='url-parameters-17'>URL Parameters</h3>
+<p><code>None</code></p>
+<h3 id='rights-needed-17'>Rights Needed</h3>
+<p><code>admin</code></p>
+<h3 id='api-response-14'>API Response</h3>
+<p>A successful API call with a valid system property name could give the details of the system property details as shown on the right.</p>
+<h2 id='set-a-system-property'>Set a System property</h2>
+<blockquote>
+<p>To set a system property value:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://events-sage.minusonedb.com/system/cors'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span> <span class="se">\</span>
+--form <span class="s1">'value="seermedia.io,marconi.io"'</span>
+</code></pre>
+<p>This endpoint can be used to set system properties.</p>
+<h3 id='http-request-23'>HTTP Request</h3>
+<p><code>POST &#39;https://events-sage.minusonedb.com/system/&lt;system_property_name&gt;</code></p>
+<h3 id='url-parameters-18'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>The value you want to set to the specific system property</td>
+</tr>
+</tbody></table>
+<h3 id='rights-needed-18'>Rights Needed</h3>
+<p><code>admin</code></p>
+<h3 id='api-response-15'>API Response</h3>
+<p>A successful API response would return HTTP code <code>204</code>.</p>
+<h1 id='operations'>Operations</h1><h2 id='healthchecks'>HealthChecks</h2>
+<blockquote>
+<p>To check the healthcheck:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --location --request GET <span class="s1">'https://events-sage.minusonedb.com/health'</span> <span class="se">\</span>
+--header <span class="s1">'m1-auth-token: ATaxKeeAnxPH3R8FX4xb/+/5WuHTYpZ1IbCMw4lNqE+vFNGIpW17s/Cw9fP63S2RWmdSVUifOnhPXKYjGeas5zc/2NKkRBEZky5fy1Uf5CE+bfFZfTHLzs8dRNvY/UvlQgMpoTTeIDZL/YQQ1RKSsofwdVjtarg1t2ixpes2ji4='</span>
+</code></pre>
+<blockquote>
+<p>A successful call will respond with:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+    <span class="s2">"geo"</span>: <span class="o">{</span>
+        <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>,
+        <span class="s2">"message"</span>: <span class="s2">"Data loaded."</span>
+    <span class="o">}</span>,
+    <span class="s2">"sessions"</span>: <span class="o">{</span>
+        <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>,
+        <span class="s2">"message"</span>: <span class="s2">""</span>,
+        <span class="s2">"details"</span>: <span class="o">{</span>
+            <span class="s2">"Node stash shard 0 replica 0"</span>: <span class="o">{</span>
+                <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>,
+                <span class="s2">"message"</span>: <span class="s2">"Status 200"</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>,
+    <span class="s2">"system"</span>: <span class="o">{</span>
+        <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>
+    <span class="o">}</span>,
+    <span class="s2">"stores"</span>: <span class="o">{</span>
+        <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>,
+        <span class="s2">"message"</span>: <span class="s2">""</span>,
+        <span class="s2">"details"</span>: <span class="o">{</span>
+            <span class="s2">"Node index shard 0 replica 0"</span>: <span class="o">{</span>
+                <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>,
+                <span class="s2">"message"</span>: <span class="s2">"Status 200"</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>,
+    <span class="s2">"overall"</span>: <span class="o">{</span>
+        <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>
+    <span class="o">}</span>,
+    <span class="s2">"id"</span>: <span class="o">{</span>
+        <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>
+    <span class="o">}</span>,
+    <span class="s2">"lake"</span>: <span class="o">{</span>
+        <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>
+    <span class="o">}</span>,
+    <span class="s2">"db"</span>: <span class="o">{</span>
+        <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>
+    <span class="o">}</span>,
+    <span class="s2">"users"</span>: <span class="o">{</span>
+        <span class="s2">"status"</span>: <span class="s2">"PASSED"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre><h3 id='http-request-24'>HTTP Request</h3>
+<p><code>GET &#39;https://events-sage.minusonedb.com/health</code></p>
+<h3 id='url-parameters-19'>URL Parameters</h3>
+<p>None</p>
+<h3 id='rights-needed-19'>Rights Needed</h3>
+<p><code>admin</code></p>
+<h3 id='api-response-16'>API Response</h3>
+<p>The request will return a HTTP code <code>200</code> with details about all the system components and its related health details. A typical health check response is shown on the right.</p>
+<h1 id='annexures'>Annexures</h1><h2 id='annexure-a-rights-to-the-users'>Annexure A - Rights to the Users</h2>
+<aside class="notice">Below are the set of Rights that can be assigned to the users while thier accounts are being created.</aside>
+
+<table><thead>
+<tr>
+<th>Rights</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>admin</td>
+<td>The user would be able to perform all the admin related operations</td>
+</tr>
+<tr>
+<td>schema</td>
+<td>The user would be able to perform all the schema alterations related operations</td>
+</tr>
+<tr>
+<td>get</td>
+<td>The user would only be able to fetch data from the database</td>
+</tr>
+<tr>
+<td>publish</td>
+<td>The user would be able to publish data to the database</td>
+</tr>
+<tr>
+<td>sessionSearch</td>
+<td>The user would be able to search from the live sessions store</td>
+</tr>
+<tr>
+<td>sessionupdate</td>
+<td>The user would be able to add / delete data from the live sessions store</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request sucks.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
