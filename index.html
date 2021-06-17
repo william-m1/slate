@@ -1,0 +1,1408 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>MinusOneDB API Docs</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-a9fde460.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#service-api-docs" class="toc-h1 toc-link" data-title="Service API Docs"><big><u>Service API Docs</u></big></a>
+          </li>
+          <li>
+            <a href="#access-and-user-management" class="toc-h1 toc-link" data-title="Access and User Management">Access and User Management</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#auth" class="toc-h2 toc-link" data-title="/auth">/auth</a>
+                  </li>
+                  <li>
+                    <a href="#user-password" class="toc-h2 toc-link" data-title="/user/password">/user/password</a>
+                  </li>
+                  <li>
+                    <a href="#user-list" class="toc-h2 toc-link" data-title="/user/list">/user/list</a>
+                  </li>
+                  <li>
+                    <a href="#user-get" class="toc-h2 toc-link" data-title="/user/get">/user/get</a>
+                  </li>
+                  <li>
+                    <a href="#user-add" class="toc-h2 toc-link" data-title="/user/add">/user/add</a>
+                  </li>
+                  <li>
+                    <a href="#user-update" class="toc-h2 toc-link" data-title="/user/update">/user/update</a>
+                  </li>
+                  <li>
+                    <a href="#user-remove" class="toc-h2 toc-link" data-title="user/remove">user/remove</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#archive-layer-methods" class="toc-h1 toc-link" data-title="Archive Layer Methods">Archive Layer Methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#write" class="toc-h2 toc-link" data-title="/write">/write</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#data-lake-methods" class="toc-h1 toc-link" data-title="Data Lake Methods">Data Lake Methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#next" class="toc-h2 toc-link" data-title="/next">/next</a>
+                  </li>
+                  <li>
+                    <a href="#publish" class="toc-h2 toc-link" data-title="/publish">/publish</a>
+                  </li>
+                  <li>
+                    <a href="#get" class="toc-h2 toc-link" data-title="/get">/get</a>
+                  </li>
+                  <li>
+                    <a href="#range" class="toc-h2 toc-link" data-title="/range">/range</a>
+                  </li>
+                  <li>
+                    <a href="#schema" class="toc-h2 toc-link" data-title="/schema">/schema</a>
+                  </li>
+                  <li>
+                    <a href="#schema-add" class="toc-h2 toc-link" data-title="/schema/add">/schema/add</a>
+                  </li>
+                  <li>
+                    <a href="#schema-wipe" class="toc-h2 toc-link" data-title="/schema/wipe">/schema/wipe</a>
+                  </li>
+                  <li>
+                    <a href="#insert" class="toc-h2 toc-link" data-title="/insert">/insert</a>
+                  </li>
+                  <li>
+                    <a href="#update" class="toc-h2 toc-link" data-title="/update">/update</a>
+                  </li>
+                  <li>
+                    <a href="#delete" class="toc-h2 toc-link" data-title="/delete">/delete</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#data-store-methods" class="toc-h1 toc-link" data-title="Data Store Methods">Data Store Methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#index" class="toc-h2 toc-link" data-title="/index">/index</a>
+                  </li>
+                  <li>
+                    <a href="#query" class="toc-h2 toc-link" data-title="/query">/query</a>
+                  </li>
+                  <li>
+                    <a href="#store-list" class="toc-h2 toc-link" data-title="/store/list">/store/list</a>
+                  </li>
+                  <li>
+                    <a href="#store-enable" class="toc-h2 toc-link" data-title="/store/enable">/store/enable</a>
+                  </li>
+                  <li>
+                    <a href="#store-autocommit" class="toc-h2 toc-link" data-title="/store/autocommit">/store/autocommit</a>
+                  </li>
+                  <li>
+                    <a href="#store-add" class="toc-h2 toc-link" data-title="/store/add">/store/add</a>
+                  </li>
+                  <li>
+                    <a href="#store-drop" class="toc-h2 toc-link" data-title="/store/drop">/store/drop</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#session-store-methods" class="toc-h1 toc-link" data-title="Session Store Methods">Session Store Methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#session-update" class="toc-h2 toc-link" data-title="/session/update">/session/update</a>
+                  </li>
+                  <li>
+                    <a href="#session-search" class="toc-h2 toc-link" data-title="/session/search">/session/search</a>
+                  </li>
+                  <li>
+                    <a href="#session-list" class="toc-h2 toc-link" data-title="/session/list">/session/list</a>
+                  </li>
+                  <li>
+                    <a href="#session-key" class="toc-h2 toc-link" data-title="/session/key">/session/key</a>
+                  </li>
+                  <li>
+                    <a href="#session-add" class="toc-h2 toc-link" data-title="/session/add">/session/add</a>
+                  </li>
+                  <li>
+                    <a href="#session-drop" class="toc-h2 toc-link" data-title="/session/drop">/session/drop</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#system-properties" class="toc-h1 toc-link" data-title="System Properties">System Properties</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#init-boolean" class="toc-h2 toc-link" data-title="init, boolean">init, boolean</a>
+                  </li>
+                  <li>
+                    <a href="#cors-string" class="toc-h2 toc-link" data-title="cors, String[]">cors, String[]</a>
+                  </li>
+                  <li>
+                    <a href="#token-expire-ms-long" class="toc-h2 toc-link" data-title="token-expire-ms, long">token-expire-ms, long</a>
+                  </li>
+                  <li>
+                    <a href="#publish-permissive-boolean" class="toc-h2 toc-link" data-title="publish-permissive, boolean">publish-permissive, boolean</a>
+                  </li>
+                  <li>
+                    <a href="#property-partial-string" class="toc-h2 toc-link" data-title="property-partial, String">property-partial, String</a>
+                  </li>
+                  <li>
+                    <a href="#password-min-length-long" class="toc-h2 toc-link" data-title="password-min-length, long">password-min-length, long</a>
+                  </li>
+                  <li>
+                    <a href="#property-session-id-string" class="toc-h2 toc-link" data-title="property-session-id, String">property-session-id, String</a>
+                  </li>
+                  <li>
+                    <a href="#geo-boolean" class="toc-h2 toc-link" data-title="geo, boolean">geo, boolean</a>
+                  </li>
+                  <li>
+                    <a href="#property-ip-string" class="toc-h2 toc-link" data-title="property-ip, String">property-ip, String</a>
+                  </li>
+                  <li>
+                    <a href="#property-received-string" class="toc-h2 toc-link" data-title="property-received, String">property-received, String</a>
+                  </li>
+                  <li>
+                    <a href="#bucket-string" class="toc-h2 toc-link" data-title="bucket, String">bucket, String</a>
+                  </li>
+                  <li>
+                    <a href="#region-string" class="toc-h2 toc-link" data-title="region, String">region, String</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#system-configuration" class="toc-h1 toc-link" data-title="System Configuration">System Configuration</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#system" class="toc-h2 toc-link" data-title="/system">/system</a>
+                  </li>
+                  <li>
+                    <a href="#system-lt-property-gt" class="toc-h2 toc-link" data-title="/system/&lt;property&gt;">/system/&lt;property&gt;</a>
+                  </li>
+                  <li>
+                    <a href="#system-2" class="toc-h2 toc-link" data-title="/system">/system</a>
+                  </li>
+                  <li>
+                    <a href="#system-lt-property-gt-2" class="toc-h2 toc-link" data-title="/system/&lt;property&gt;">/system/&lt;property&gt;</a>
+                  </li>
+                  <li>
+                    <a href="#system-cors-add" class="toc-h2 toc-link" data-title="/system/cors/add">/system/cors/add</a>
+                  </li>
+                  <li>
+                    <a href="#system-cors-remove" class="toc-h2 toc-link" data-title="/system/cors/remove">/system/cors/remove</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#operations" class="toc-h1 toc-link" data-title="Operations">Operations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ping" class="toc-h2 toc-link" data-title="/ping">/ping</a>
+                  </li>
+                  <li>
+                    <a href="#init" class="toc-h2 toc-link" data-title="/init">/init</a>
+                  </li>
+                  <li>
+                    <a href="#init-2" class="toc-h2 toc-link" data-title="/init">/init</a>
+                  </li>
+                  <li>
+                    <a href="#health" class="toc-h2 toc-link" data-title="/health">/health</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ops-api-docs" class="toc-h1 toc-link" data-title="Ops API Docs"><big><u>Ops API Docs</u></big></a>
+          </li>
+          <li>
+            <a href="#access-and-user-management" class="toc-h1 toc-link" data-title="Access and User Management">Access and User Management</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#auth" class="toc-h2 toc-link" data-title="/auth">/auth</a>
+                  </li>
+                  <li>
+                    <a href="#user-password" class="toc-h2 toc-link" data-title="/user/password">/user/password</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#account-management" class="toc-h1 toc-link" data-title="Account Management">Account Management</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#account-list" class="toc-h2 toc-link" data-title="/account/list">/account/list</a>
+                  </li>
+                  <li>
+                    <a href="#account-user-add" class="toc-h2 toc-link" data-title="/account/user/add">/account/user/add</a>
+                  </li>
+                  <li>
+                    <a href="#account-user-update" class="toc-h2 toc-link" data-title="/account/user/update">/account/user/update</a>
+                  </li>
+                  <li>
+                    <a href="#account-user-remove" class="toc-h2 toc-link" data-title="/account/user/remove">/account/user/remove</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#manage-environments" class="toc-h1 toc-link" data-title="Manage Environments">Manage Environments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#env-get" class="toc-h2 toc-link" data-title="/env/get">/env/get</a>
+                  </li>
+                  <li>
+                    <a href="#env-list" class="toc-h2 toc-link" data-title="/env/list">/env/list</a>
+                  </li>
+                  <li>
+                    <a href="#env-create" class="toc-h2 toc-link" data-title="/env/create">/env/create</a>
+                  </li>
+                  <li>
+                    <a href="#env-destroy" class="toc-h2 toc-link" data-title="/env/destroy">/env/destroy</a>
+                  </li>
+                  <li>
+                    <a href="#env-rescale" class="toc-h2 toc-link" data-title="/env/rescale">/env/rescale</a>
+                  </li>
+                  <li>
+                    <a href="#env-store-create" class="toc-h2 toc-link" data-title="/env/store/create">/env/store/create</a>
+                  </li>
+                  <li>
+                    <a href="#env-store-destroy" class="toc-h2 toc-link" data-title="/env/store/destroy">/env/store/destroy</a>
+                  </li>
+                  <li>
+                    <a href="#env-session-create" class="toc-h2 toc-link" data-title="/env/session/create">/env/session/create</a>
+                  </li>
+                  <li>
+                    <a href="#env-session-destroy" class="toc-h2 toc-link" data-title="/env/session/destroy">/env/session/destroy</a>
+                  </li>
+                  <li>
+                    <a href="#env-bucket-register" class="toc-h2 toc-link" data-title="/env/bucket/register">/env/bucket/register</a>
+                  </li>
+                  <li>
+                    <a href="#env-bucket-deregister" class="toc-h2 toc-link" data-title="/env/bucket/deregister">/env/bucket/deregister</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Free Trial today</a></li>
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the MinusOneDB API Docs.</p>
+
+<p>This API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>.</p>
+<h1 id='service-api-docs'><big><u>Service API Docs</u></big></h1><h1 id='access-and-user-management'>Access and User Management</h1><h2 id='auth'>/auth</h2>
+<p>Log in and retrieve token.</p>
+
+<ul>
+<li><strong>rights:</strong> none, admin if ip or ttl is set</li>
+<li><strong>verbs:</strong> POST</li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>password</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>ip</td>
+<td>String</td>
+<td>(Optional) Used to log in on behalf of a user at specified ip address. Use of the token &quot;...&quot; will disable ip address verification.</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>long</td>
+<td>(Optional) Will set a custom ttl in ms. Otherwise system default will be used.</td>
+</tr>
+</tbody></table>
+
+<!---[comment] # '- **parameters:**
+    username (String)
+    password (String)
+    ip (String, optional. Used to log in on behalf of a user at specified ip address. Use of the token "..." will disable ip address verification.)
+    ttl (long, optional. Will set a custom ttl in ms. Otherwise system default will be used.'-->
+<h2 id='user-password'>/user/password</h2>
+<p>Change user password</p>
+
+<ul>
+<li><strong>rights:</strong> none, admin if setting on behalf of another user.</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>password (String, new password)</li>
+<li>username (String, optional, user if specified by admin user)</li>
+</ul></li>
+</ul>
+<h2 id='user-list'>/user/list</h2>
+<p>List all users and associated metadata.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong> none</li>
+</ul>
+<h2 id='user-get'>/user/get</h2>
+<p>Retrieve metadata for specified user.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>username (String)</li>
+</ul></li>
+</ul>
+<h2 id='user-add'>/user/add</h2>
+<p>Add new user and specify rights.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>username (String, unique)</li>
+<li>password (String)</li>
+<li>rights (String[], typically a subset of admin, schema, get, publish, sessionSearch, sessionUpdate; NOTE: you can add your own rights for internal application use cases)</li>
+</ul></li>
+</ul>
+<h2 id='user-update'>/user/update</h2>
+<p>Update user record.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>username (String)</li>
+<li>rights (String[], as /user/add)</li>
+</ul></li>
+</ul>
+<h2 id='user-remove'>user/remove</h2>
+<p>Removes user and all rights.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>username (String)</li>
+</ul></li>
+</ul>
+<h1 id='archive-layer-methods'>Archive Layer Methods</h1>
+<aside class="notice">
+Please note that the only data access to data stored in the Archive layer is via s3 file access, typically by specifying files as the s3file for a call to publish(). Future features will allow time-based scanning and retrieval of data.
+</aside>
+<h2 id='write'>/write</h2>
+<p>Persist arbitrary data to the archive.</p>
+
+<ul>
+<li><strong>rights:</strong> publish</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>async (boolean, default true; use async=false for debugging in order to receive synchronous error messages)</li>
+<li>items (JSON map[], can be anything. If geo is enabled geographic metadata will be added based on an inspection of a property &quot;ip&quot;)</li>
+<li>publish (boolean, will publish data to the data lake concurrently if true, please see System Configuration property publish-permissive)</li>
+<li>rules (TransformRuleSet, see publish() method. Used only in case publish=true)</li>
+</ul></li>
+</ul>
+<h1 id='data-lake-methods'>Data Lake Methods</h1><h2 id='next'>/next</h2>
+<p>Retrieve the next <code>_m1key</code> that will be assigned during /publish.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>properties:</strong> none.</li>
+</ul>
+<h2 id='publish'>/publish</h2>
+<p>Load files from s3 into the data lake with optional transformation; please see System Configuration property publish-permissive.</p>
+
+<ul>
+<li><strong>rights:</strong> publish</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>properties:</strong>
+
+<ul>
+<li>s3file (String, fully qualified s3 file path.)</li>
+<li>rules (TransformRuleSet, see reference)</li>
+<li>format (String, optional, one of txt, csv, json, jsonl. If not present filename will be inspected for format.)</li>
+<li>compression (String, optional, one of gz, zip. If not present filename will be inspected.)</li>
+<li>encoding (String, optional, any java encoding format. If not present UTF-8 will be assumed.)</li>
+<li>delimiter (char, optional, character to be used for delimited file formats. For formats txt and csv tabs and commas will be assumed unless otherwise specified.)</li>
+<li>headers (boolean, optional. Specifies whether headers are present for delimited file formats. If not a TransformRuleSet will be required. Default true.)</li>
+<li>files (String[], optional. Used (only) to specify specific files to be extracted from zip archives.)</li>
+</ul></li>
+</ul>
+<h2 id='get'>/get</h2>
+<p>Retrieve any number of rows from the data lake via <code>_m1key</code> property.</p>
+
+<ul>
+<li><strong>rights:</strong> get</li>
+<li><strong>verbs:</strong> GET, POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>ids (long[], ids of records to be retrieved)</li>
+<li>properties (String[], properties from schema to be populated on records, if null all columns retrieved)</li>
+</ul></li>
+<li><strong>returns:</strong> JSON [{},...]</li>
+</ul>
+<h2 id='range'>/range</h2>
+<p>Retrieve any number of rows of consecutive <code>_m1key</code> values.</p>
+
+<ul>
+<li><strong>rights:</strong> get</li>
+<li><strong>verbs:</strong> GET, POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>start (long, first <code>_m1key</code> to be retrieved)</li>
+<li>end (long, final <code>_m1key</code> to be retrieved, inclusive)</li>
+<li>properties (String[], properties from schema to be populated on records, if null all columns retrieved)</li>
+</ul></li>
+<li><strong>returns:</strong> JSON [{},...]</li>
+</ul>
+<h2 id='schema'>/schema</h2>
+<p>Retrieves current schema.</p>
+
+<ul>
+<li><strong>rights:</strong> schema, get, publish</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong> none</li>
+<li><strong>returns:</strong> JSON [{},...]</li>
+</ul>
+<h2 id='schema-add'>/schema/add</h2>
+<p>Add properties to the schema of the data lake. Can be called as many times as desired to add new property definitions.</p>
+
+<ul>
+<li><strong>rights:</strong> schema</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+properties (property[])
+
+<ul>
+<li>Each property consists of name(String, unique), type(String, one of string, text, integer, double, date), multivalued(boolean, default false)</li>
+</ul></li>
+</ul>
+<h2 id='schema-wipe'>/schema/wipe</h2>
+<p>Deletes entire schema. Persisted data is not modified. </p>
+
+<ul>
+<li><strong>rights:</strong> schema</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong> none</li>
+</ul>
+<h2 id='insert'>/insert</h2>
+<aside class="warning">
+<b>WARNING</b>: this method is included for completeness, but should be used with extreme caution.
+</aside>
+
+<ul>
+<li><strong>rights:</strong> publish<br></li>
+<li><strong>verbs:</strong> POST<br></li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>e (Map[], entities to be written directly to the data lake; entities must NOT contain an <code>_m1key</code> parameter)</li>
+<li>rules (TransformRuleSet)</li>
+</ul></li>
+</ul>
+<h2 id='update'>/update</h2>
+<aside class="warning">
+<b>WARNING</b>: this method is included for completeness, but should be used with extreme caution.
+</aside>
+
+<ul>
+<li><strong>rights:</strong> publish<br></li>
+<li><strong>verbs:</strong> POST<br></li>
+<li><strong>parameters:</strong><br>
+
+<ul>
+<li>e (Map[], entities to be updated)</li>
+<li>complete (boolean, required; if complete=true entities will be overwritten and missing properties will be removed, if complete=false specified properties will be overwritten while others will be retained)</li>
+</ul></li>
+</ul>
+<h2 id='delete'>/delete</h2>
+<aside class="warning">
+<b>WARNING</b>: this method is included for completeness, but should be used with extreme caution.
+</aside>
+
+<ul>
+<li><strong>rights:</strong> delete</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>ids (long[], entities will be deleted based on <code>_m1key</code> values specified)</li>
+</ul></li>
+</ul>
+<h1 id='data-store-methods'>Data Store Methods</h1><h2 id='index'>/index</h2>
+<ul>
+<li><strong>rights:</strong> publish</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, store name)</li>
+<li>start (long, <code>_m1key</code> value at which to begin indexing)</li>
+<li>end (long, <code>_m1key</code> value at which to stop indexing, inclusive)</li>
+</ul></li>
+</ul>
+<h2 id='query'>/query</h2>
+<ul>
+<li><strong>rights:</strong> get</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, the data store to be queried.)</li>
+<li>SOLR query syntax: other than the store parameter above, this service implements a query language as specified by the <a href="https://lucene.apache.org/solr/guide/8_0/searching.html#searching">SOLR docs</a></li>
+</ul></li>
+</ul>
+<h2 id='store-list'>/store/list</h2>
+<p>Return a list of all configured data stores with metadata.</p>
+
+<ul>
+<li><strong>rights:</strong> get, admin</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong> none</li>
+</ul>
+<h2 id='store-enable'>/store/enable</h2>
+<p>Set a data store to active/inactive.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, store name)</li>
+<li>active (boolean)</li>
+</ul></li>
+</ul>
+<h2 id='store-autocommit'>/store/autocommit</h2>
+<p>Enable/disable autocommit.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, store name)</li>
+<li>on (boolean)</li>
+</ul></li>
+</ul>
+<h2 id='store-add'>/store/add</h2>
+<p>Add configuration for a newly deployed data store. Called after a new store is deployed via minusonedb ops services.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, store name)</li>
+<li>type (String, one of &quot;standard&quot; or &quot;boost&quot;)</li>
+<li>shards (long, number of shards in deployed store)</li>
+<li>replicas (long, number or replicas in deployed store)</li>
+<li>percent (double, percentage - expressed as a number between 0 and 1; store will be sampled to this subset of all published data based on value of <code>_m1rand</code>)</li>
+</ul></li>
+</ul>
+<h2 id='store-drop'>/store/drop</h2>
+<p>Removes configuration for a data store. Typically called after the store is decommissioned via minusonedb ops services.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, store name)</li>
+</ul></li>
+</ul>
+<h1 id='session-store-methods'>Session Store Methods</h1><h2 id='session-update'>/session/update</h2>
+<p>Upsert and/or delete data stored in a specified session store.</p>
+
+<ul>
+<li><strong>rights:</strong> sessionUpdate</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, store name)</li>
+<li>ops (JSON, op[], a single op may have two properties 
+
+<ul>
+<li>upsert (map[], must have session id parameter set), </li>
+<li>delete (String[], session ids to be deleted))</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id='session-search'>/session/search</h2>
+<p>Retrieve matching records from the session store.</p>
+
+<ul>
+<li><strong>rights:</strong> sessionSearch</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, store name)</li>
+<li>query (JSON, Term)</li>
+</ul></li>
+<li><strong>returns:</strong> JSON [{},...]</li>
+</ul>
+<h2 id='session-list'>/session/list</h2>
+<p>Return a list of all configured data stores with metadata.</p>
+
+<ul>
+<li><strong>rights:</strong> get, admin</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong> none</li>
+</ul>
+<h2 id='session-key'>/session/key</h2>
+<p>Set the key to be used for identity tests.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, store name)</li>
+<li>key (String, property to be used for all identity tests)</li>
+</ul></li>
+</ul>
+<h2 id='session-add'>/session/add</h2>
+<p>Add configuration for a newly deployed session store. Called after a new store is deployed via minusonedb ops services.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, store name)</li>
+<li>key (String, property to be used for identity tests; defaults to <code>session.id</code>)</li>
+<li>shards (long, number of shards in deployed store)</li>
+<li>replicas (long, number or replicas in deployed store)</li>
+</ul></li>
+</ul>
+<h2 id='session-drop'>/session/drop</h2>
+<p>Removes configuration for a session store. Typically called after the store is decommissioned via minusonedb ops services.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>store (String, store name)</li>
+</ul></li>
+</ul>
+<h1 id='system-properties'>System Properties</h1>
+<p>This section provides definions to all system properties. All properties are Strings so the referenced type can be thought of as the value printed as a String, e.g. a long might be &quot;44&quot;.</p>
+<h2 id='init-boolean'>init, boolean</h2>
+<ul>
+<li>true means system is initialized, false means not</li>
+<li>DO NOT SET</li>
+</ul>
+<h2 id='cors-string'>cors, String[]</h2>
+<ul>
+<li>list of domains that will be accepted for CORS requests</li>
+<li>Under most circumstances do not set. Use <code>/cors/add</code> and <code>/cors/remove</code> instead.</li>
+</ul>
+<h2 id='token-expire-ms-long'>token-expire-ms, long</h2>
+<ul>
+<li>number of ms before tokens are no longer accepted. This provides the system default which can be overriden by admin accounts on an individual token.</li>
+<li>set any value to determine time before token expiration.</li>
+</ul>
+<h2 id='publish-permissive-boolean'>publish-permissive, boolean</h2>
+<ul>
+<li>false (default) means that rows that fail schema validation will cause entire blocks of published data to be rejected atomically. true means that rows that fail schema validation will be persisted to the extent possible - all properties that pass validation will be persisted;  in cases where a row is partially persisted the value of &quot;property-partial&quot; (see below) will be set to true on that row.</li>
+<li>set as &quot;true&quot; or &quot;false&quot; to change value.</li>
+</ul>
+<h2 id='property-partial-string'>property-partial, String</h2>
+<ul>
+<li>property set as true in cases where rows are partially persisted, only in cases where publish-permissive is &quot;true&quot;. Default value <code>_m1.partial</code>.</li>
+<li>set to any property desired. Property must, itself, be included in the schema as a boolean property.</li>
+</ul>
+<h2 id='password-min-length-long'>password-min-length, long</h2>
+<ul>
+<li>property for minimum password length, default 8.</li>
+<li>set to any long desired, e.g. &quot;12&quot;.</li>
+</ul>
+<h2 id='property-session-id-string'>property-session-id, String</h2>
+<ul>
+<li>property to be used by session store as id for identity determination, default <code>session.id</code>.</li>
+<li>set to any property desired.</li>
+</ul>
+<h2 id='geo-boolean'>geo, boolean</h2>
+<ul>
+<li>false (default) means written docs will not be modified. true means geo data will be appended based on <code>property-ip</code> (see below). Note that schema must include geo properties (and geo properties can be mapped to alternate property names as desired).</li>
+<li>set to boolean as above.</li>
+</ul>
+<h2 id='property-ip-string'>property-ip, String</h2>
+<ul>
+<li>determines property to be used by geo, when enabled. Default value <code>_m1.ip</code>.</li>
+<li>set to any property desired; property must be included in schema.</li>
+</ul>
+<h2 id='property-received-string'>property-received, String</h2>
+<ul>
+<li>property set when docs are received via /write; default value <code>_m1.receivedUtC&quot;</code>.</li>
+<li>set to any property desired; property must be included in schema.</li>
+</ul>
+<h2 id='bucket-string'>bucket, String</h2>
+<ul>
+<li>the bucket used as a backing store for archival and data lake features. This is set at /init time and should be the bucket associated with the environment at creation time. No other value is supported at this time.</li>
+<li>setting this property is NOT SUPPORTED at this time, but future versions may allow it to be reset.</li>
+</ul>
+<h2 id='region-string'>region, String</h2>
+<ul>
+<li>the region of AWS used for infrastructure in this environment. Default value &quot;us-east-1&quot;, no other region supported at this time.</li>
+<li>setting this property is NOT SUPPORTED at this time, but will be in future releases.</li>
+</ul>
+<h1 id='system-configuration'>System Configuration</h1><h2 id='system'>/system</h2>
+<p>Return all currently configured system parameters.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong> none</li>
+</ul>
+<h2 id='system-lt-property-gt'>/system/&lt;property&gt;</h2>
+<p>Retrieve value for system parameter <code>&lt;property&gt;</code>.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong> none</li>
+</ul>
+<h2 id='system-2'>/system</h2>
+<p>Return all currently configured system parameters.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>Any system properties can be set by posting <code>&lt;property&gt;</code>=<value> in normal URL-encoded form syntax. Multiple properties can be set concurrently.</li>
+</ul></li>
+</ul>
+<h2 id='system-lt-property-gt-2'>/system/&lt;property&gt;</h2>
+<p>Set value for system parameter <code>&lt;property&gt;</code>.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>value (String, the value to be set.)</li>
+</ul></li>
+</ul>
+<h2 id='system-cors-add'>/system/cors/add</h2>
+<p>Add a new CORS domain. Any CORS domain will allow requests to the specified domain and all subdomains.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>domains (String[], domains to be added)</li>
+</ul></li>
+</ul>
+<h2 id='system-cors-remove'>/system/cors/remove</h2>
+<p>Remove CORS domain</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>domains (String[], domains to be removed)</li>
+</ul></li>
+</ul>
+<h1 id='operations'>Operations</h1><h2 id='ping'>/ping</h2>
+<p>Simple boolean, always returns true in non-error states. Indicates the minimal functioning of the system as a whole. Use <code>/health</code> for a deeper diagnostic.</p>
+
+<ul>
+<li><strong>rights:</strong> none</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong> none.</li>
+</ul>
+<h2 id='init'>/init</h2>
+<p>Simple boolean tells you whether the system has been initialized.</p>
+
+<ul>
+<li><strong>rights:</strong> none</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong> none.</li>
+</ul>
+<h2 id='init-2'>/init</h2>
+<p>Used one time to initialize a new environment.</p>
+
+<ul>
+<li><strong>rights:</strong> none</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+username (String, initial admin user)
+password (String, password for admin user)
+bucket (String, AWS bucket used as a backing store for all archival and data lake functions)</li>
+</ul>
+<h2 id='health'>/health</h2>
+<p>Returns a status of all services.</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong> none</li>
+</ul>
+<h1 id='ops-api-docs'><big><u>Ops API Docs</u></big></h1><h1 id='access-and-user-management'>Access and User Management</h1><h2 id='auth'>/auth</h2>
+<p>log in and retrieve token for service access</p>
+
+<ul>
+<li><strong>rights:</strong> none</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>username (String)</li>
+<li>password (String)</li>
+</ul></li>
+</ul>
+<h2 id='user-password'>/user/password</h2>
+<p>Change user password</p>
+
+<ul>
+<li><strong>rights:</strong> none, though a correct auth token must be included in the request</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>password (String, new password)</li>
+</ul></li>
+</ul>
+<h1 id='account-management'>Account Management</h1>
+<p>A note about rights: all rights are associated with specific accounts. A user may have access to many (or no) accounts with varying levels of access. At this time the rights supported are:</p>
+
+<p><strong>owner:</strong> user can delete the account or change payment information.<br>
+<strong>admin:</strong> user can manage users and assign rights.<br>
+<strong>view:</strong> user can view all account assets including environment names and metadata.<br>
+<strong>manage:</strong> user can manage environment assets including (un-)deploying infrastructure as well as creating and destroying environments.  </p>
+
+<p>Rights are strings and are case-sensitive. The collection of rights is extensible for application-specific uses.</p>
+<h2 id='account-list'>/account/list</h2>
+<p>list all accounts the current user has access to</p>
+
+<ul>
+<li><strong>rights:</strong> none</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong> none</li>
+</ul>
+<h2 id='account-user-add'>/account/user/add</h2>
+<p>add access to an account for a specified user with specified rights (default none)</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>account (String, account name)</li>
+<li>username (String, user email address)</li>
+<li>rights (String[], list of rights allowed)</li>
+</ul></li>
+</ul>
+<h2 id='account-user-update'>/account/user/update</h2>
+<p>update account rights for specified user</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>account (String, account name)</li>
+<li>username (String, user email address)</li>
+<li>rights (String[], list of rights allowed)</li>
+</ul></li>
+</ul>
+<h2 id='account-user-remove'>/account/user/remove</h2>
+<p>remove all access to account for specified user</p>
+
+<ul>
+<li><strong>rights:</strong> admin</li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>account (String, account name)</li>
+<li>username (String, user email address)</li>
+</ul></li>
+</ul>
+<h1 id='manage-environments'>Manage Environments</h1><h2 id='env-get'>/env/get</h2>
+<p>retrieve metadata associated with a specified environment</p>
+
+<ul>
+<li><strong>rights:</strong> view</li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>env (String, environment id)</li>
+</ul></li>
+</ul>
+<h2 id='env-list'>/env/list</h2>
+<p>list all enviroments associated with a specified account</p>
+
+<ul>
+<li><strong>rights:</strong></li>
+<li><strong>verbs:</strong> GET</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>account (String, account name)</li>
+</ul></li>
+</ul>
+<h2 id='env-create'>/env/create</h2>
+<ul>
+<li><strong>rights:</strong></li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>account (String, account name)</li>
+<li>name (String, name of environment to be created - must be unique within account)</li>
+<li>servers (optional int, number of data processing servers to be deployed; default is 2)</li>
+</ul></li>
+</ul>
+<h2 id='env-destroy'>/env/destroy</h2>
+<ul>
+<li><strong>rights:</strong> </li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>env (String, environment id)</li>
+</ul></li>
+</ul>
+<h2 id='env-rescale'>/env/rescale</h2>
+<ul>
+<li><strong>rights:</strong></li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>env (String, environment id)</li>
+<li>servers (optional int, number of data processing servers to be deployed; default is 2)</li>
+<li>threshold (optional int, number of servers that must be healthy before old servers will be terminated; default is the value of servers)</li>
+</ul></li>
+</ul>
+<h2 id='env-store-create'>/env/store/create</h2>
+<ul>
+<li><strong>rights:</strong></li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>env (String, environment id)</li>
+<li>store (String, store name to be created - must be unique within the environment)</li>
+<li>type (optional String, the type of data store (values are standard|boost) to be created; the default is standard)</li>
+<li>shards (optional int, the number of shards to be deployed; the default is 1; a singles shard can store 450 GB (standard) or 375 GB (boost) safely)</li>
+<li>replicas (optional int, the number of replicas of each shard to be created; the default is 2; most use cases will choose 1 or 2 depending on whether high availability is desired)</li>
+</ul></li>
+</ul>
+<h2 id='env-store-destroy'>/env/store/destroy</h2>
+<ul>
+<li><strong>rights:</strong></li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>env (String, environment id)</li>
+<li>store (String, store name)</li>
+</ul></li>
+</ul>
+<h2 id='env-session-create'>/env/session/create</h2>
+<ul>
+<li><strong>rights:</strong></li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>env (String, environment id)</li>
+<li>store (String, store name to be created - must be unique within the environment)</li>
+<li>shards (optional int, the number of shards to be deployed; the default is 1; a singles shard can store approximately 450,000 session objects and support approximately 45,000 updates/second)</li>
+<li>replicas (optional int, the number of replicas of each shard to be created; the default is 2; most use cases will choose 1 or 2 depending on whether high availability is desired)</li>
+</ul></li>
+</ul>
+<h2 id='env-session-destroy'>/env/session/destroy</h2>
+<ul>
+<li><strong>rights:</strong></li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>env (String, environment id)</li>
+<li>store (String, store name)</li>
+</ul></li>
+</ul>
+<h2 id='env-bucket-register'>/env/bucket/register</h2>
+<ul>
+<li><strong>rights:</strong></li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>env (String, environment id)</li>
+<li>bucket (String, bucket name for read-only access)</li>
+</ul></li>
+</ul>
+<h2 id='env-bucket-deregister'>/env/bucket/deregister</h2>
+<ul>
+<li><strong>rights:</strong></li>
+<li><strong>verbs:</strong> POST</li>
+<li><strong>parameters:</strong>
+
+<ul>
+<li>env (String, environment id)</li>
+<li>bucket (String, bucket name for which access will be removed)</li>
+</ul></li>
+</ul>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
